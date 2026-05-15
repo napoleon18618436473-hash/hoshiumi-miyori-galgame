@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { Howl, Howler } from 'howler'
 import { useEffect, useMemo } from 'react'
+import { assetPath } from './game/assets'
 import { characters, chapterTitle, gameTitle, scenes, themeSong } from './game/content'
 import { getCurrentScene, useGameStore } from './game/store'
 import type { Choice, HeroineId } from './game/types'
@@ -32,7 +33,7 @@ function playVoice(src?: string, muted?: boolean) {
   }
 
   const voice = new Howl({
-    src: [src],
+    src: [assetPath(src)],
     html5: true,
     volume: 1,
   })
@@ -61,7 +62,7 @@ function TitleScreen() {
   return (
     <main className="title-screen love-title">
       <section className="title-art">
-        <img src="/assets/ui/hoshiumi-title.png" alt="" />
+        <img src={assetPath('/assets/ui/hoshiumi-title.png')} alt="" />
         <div className="title-gradient" />
         <div className="love-title-copy">
           <span>Original Romance ADV</span>
@@ -84,7 +85,7 @@ function TitleScreen() {
 function AssetPreloader() {
   return (
     <div className="asset-preloader" aria-hidden="true">
-      <img src="/assets/ui/hoshiumi-title.png" alt="" />
+      <img src={assetPath('/assets/ui/hoshiumi-title.png')} alt="" />
       {Object.values(scenes).map((scene) => (
         <img key={scene.background} src={scene.background} alt="" />
       ))}
@@ -93,9 +94,9 @@ function AssetPreloader() {
         .map((character) => (
           <img key={character.id} src={character.portrait} alt="" />
       ))}
-      <video src="/assets/video/mio-first-song.mp4" preload="metadata" />
-      <video src="/assets/video/letter-first-rain.mp4" preload="metadata" />
-      <video src="/assets/video/seventh-letter-classroom.mp4" preload="metadata" />
+      <video src={assetPath('/assets/video/mio-first-song.mp4')} preload="metadata" />
+      <video src={assetPath('/assets/video/letter-first-rain.mp4')} preload="metadata" />
+      <video src={assetPath('/assets/video/seventh-letter-classroom.mp4')} preload="metadata" />
     </div>
   )
 }
@@ -410,7 +411,11 @@ function ChapterEnd() {
 
   return (
     <main className="ending-screen love-ending">
-      <img className="ending-backdrop" src="/assets/backgrounds/empty-classroom-night.png" alt="" />
+      <img
+        className="ending-backdrop"
+        src={assetPath('/assets/backgrounds/empty-classroom-night.png')}
+        alt=""
+      />
       <section>
         <p className="eyebrow">章节完成</p>
         <h1>第一章：雨后的空教室 完</h1>

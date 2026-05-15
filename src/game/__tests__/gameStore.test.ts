@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
+import { assetPath } from '../assets'
 import { scenes } from '../content'
 import { useGameStore } from '../store'
 
@@ -22,10 +23,12 @@ describe('galgame store', () => {
   it('runs the first chapter into a heroine route seed', () => {
     useGameStore.getState().startGame()
     expect(useGameStore.getState().sceneId).toBe('schoolGate')
-    expect(useGameStore.getState().dialogue[0]?.audio).toBe('/assets/voice/sg-01.mp3')
+    expect(useGameStore.getState().dialogue[0]?.audio).toBe(assetPath('/assets/voice/sg-01.mp3'))
 
     advanceAllDialogue()
-    expect(useGameStore.getState().videoEvent?.src).toBe('/assets/video/letter-first-rain.mp4')
+    expect(useGameStore.getState().videoEvent?.src).toBe(
+      assetPath('/assets/video/letter-first-rain.mp4'),
+    )
     useGameStore.getState().closeVideoEvent()
 
     useGameStore.getState().selectChoice(scenes.schoolGate.choices[0])
@@ -38,7 +41,9 @@ describe('galgame store', () => {
     expect(useGameStore.getState().affection.mio).toBe(2)
 
     advanceAllDialogue()
-    expect(useGameStore.getState().videoEvent?.src).toBe('/assets/video/mio-first-song.mp4')
+    expect(useGameStore.getState().videoEvent?.src).toBe(
+      assetPath('/assets/video/mio-first-song.mp4'),
+    )
 
     useGameStore.getState().closeVideoEvent()
     useGameStore.getState().selectChoice(scenes.musicRoom.choices[0])
@@ -46,7 +51,7 @@ describe('galgame store', () => {
 
     advanceAllDialogue()
     expect(useGameStore.getState().videoEvent?.src).toBe(
-      '/assets/video/seventh-letter-classroom.mp4',
+      assetPath('/assets/video/seventh-letter-classroom.mp4'),
     )
     useGameStore.getState().closeVideoEvent()
 

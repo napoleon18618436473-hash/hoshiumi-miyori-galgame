@@ -1,4 +1,5 @@
 import type { AffectionBlock, Character, Scene, StatBlock } from './types'
+import { assetPath } from './assets'
 
 export const gameTitle = '星海未寄'
 export const chapterTitle = '第一章：雨后的空教室'
@@ -15,7 +16,7 @@ export const initialAffection: AffectionBlock = {
   rinka: 0,
 }
 
-export const themeSong = '/assets/music/hoshiumi-theme.mp3'
+export const themeSong = assetPath('/assets/music/hoshiumi-theme.mp3')
 
 export const characters: Character[] = [
   {
@@ -34,21 +35,21 @@ export const characters: Character[] = [
     id: 'haruka',
     name: '白咲遥',
     role: '学生会书记',
-    portrait: '/assets/characters/shirasaki-haruka.png',
+    portrait: assetPath('/assets/characters/shirasaki-haruka.png'),
     description: '冷静、礼貌、记录欲极强。她的手账里提前写着悠斗还没说出口的话。',
   },
   {
     id: 'mio',
     name: '七濑澪',
     role: '轻音部主唱',
-    portrait: '/assets/characters/nanase-mio.png',
+    portrait: assetPath('/assets/characters/nanase-mio.png'),
     description: '用玩笑掩饰不安的主唱。她唱的是恋歌，每一句都像告别。',
   },
   {
     id: 'rinka',
     name: '九条凛花',
     role: '美术部王牌',
-    portrait: '/assets/characters/kujo-rinka.png',
+    portrait: assetPath('/assets/characters/kujo-rinka.png'),
     description: '直接、尖锐、讨厌多余社交。她画下的不是未来，而是别人忘掉的过去。',
   },
 ]
@@ -59,8 +60,8 @@ export const scenes: Record<string, Scene> = {
     name: '雨后的校门',
     time: '周一 07:48',
     subtitle: '鞋柜里有一封没有被雨打湿的信。',
-    background: '/assets/backgrounds/school-gate-rain.png',
-    bgm: '/assets/bgm/morning-after-rain.mp3',
+    background: assetPath('/assets/backgrounds/school-gate-rain.png'),
+    bgm: assetPath('/assets/bgm/morning-after-rain.mp3'),
     bgmName: '雨后初见',
     goal: '拆开匿名信，决定第一天如何面对异常。',
     cast: ['haruka'],
@@ -70,14 +71,14 @@ export const scenes: Record<string, Scene> = {
         speaker: '旁白',
         characterId: 'narrator',
         text: '鞋柜里躺着一封淡蓝色的信。雨水没有沾湿它，像有人刚刚放进去。',
-        audio: '/assets/voice/sg-01.mp3',
+        audio: assetPath('/assets/voice/sg-01.mp3'),
       },
       {
         id: 'sg-02',
         speaker: '青井悠斗',
         characterId: 'yuto',
         text: '转校第一天收到信，这种展开只会出现在三流恋爱小说里吧。',
-        audio: '/assets/voice/sg-02.mp3',
+        audio: assetPath('/assets/voice/sg-02.mp3'),
       },
       {
         id: 'sg-03',
@@ -86,14 +87,14 @@ export const scenes: Record<string, Scene> = {
         mood: 'calm',
         position: 'center',
         text: '青井同学，早上好。你迟到了三分钟。',
-        audio: '/assets/voice/sg-03.mp3',
+        audio: assetPath('/assets/voice/sg-03.mp3'),
       },
       {
         id: 'sg-04',
         speaker: '青井悠斗',
         characterId: 'yuto',
         text: '我们……见过？',
-        audio: '/assets/voice/sg-04.mp3',
+        audio: assetPath('/assets/voice/sg-04.mp3'),
       },
       {
         id: 'sg-05',
@@ -102,15 +103,15 @@ export const scenes: Record<string, Scene> = {
         mood: 'guarded',
         position: 'center',
         text: '没有。至少今天以前，没有。',
-        audio: '/assets/voice/sg-05.mp3',
+        audio: assetPath('/assets/voice/sg-05.mp3'),
       },
     ],
     videoEventAfterDialogue: {
       id: 'letter-first-rain',
       title: '第一封信',
       text: '信纸在鞋柜里轻轻颤动，像从还没发生的明天寄来。',
-      src: '/assets/video/letter-first-rain.mp4',
-      poster: '/assets/backgrounds/school-gate-rain.png',
+      src: assetPath('/assets/video/letter-first-rain.mp4'),
+      poster: assetPath('/assets/backgrounds/school-gate-rain.png'),
       messageAfter: '第一封信没有署名。你必须决定，是相信遥，还是先把异常藏起来。',
     },
     choices: [
@@ -139,8 +140,8 @@ export const scenes: Record<string, Scene> = {
     name: '二年 B 班',
     time: '周一 08:12',
     subtitle: '明亮的教室里，每个人都像知道你会来。',
-    background: '/assets/backgrounds/classroom-morning.png',
-    bgm: '/assets/bgm/new-classroom.mp3',
+    background: assetPath('/assets/backgrounds/classroom-morning.png'),
+    bgm: assetPath('/assets/bgm/new-classroom.mp3'),
     bgmName: '新班级的光',
     goal: '在日常里寻找第一封信的作者。',
     cast: ['haruka', 'mio'],
@@ -152,14 +153,14 @@ export const scenes: Record<string, Scene> = {
         mood: 'playful',
         position: 'left',
         text: '新同学，要不要选靠窗的位置？那边很适合忧郁男主角。',
-        audio: '/assets/voice/cl-01.mp3',
+        audio: assetPath('/assets/voice/cl-01.mp3'),
       },
       {
         id: 'cl-02',
         speaker: '青井悠斗',
         characterId: 'yuto',
         text: '我看起来像那种人吗？',
-        audio: '/assets/voice/cl-02.mp3',
+        audio: assetPath('/assets/voice/cl-02.mp3'),
       },
       {
         id: 'cl-03',
@@ -168,7 +169,7 @@ export const scenes: Record<string, Scene> = {
         mood: 'smile',
         position: 'left',
         text: '不像。所以才要从座位开始培养气质。',
-        audio: '/assets/voice/cl-03.mp3',
+        audio: assetPath('/assets/voice/cl-03.mp3'),
       },
       {
         id: 'cl-04',
@@ -177,7 +178,7 @@ export const scenes: Record<string, Scene> = {
         mood: 'strict',
         position: 'right',
         text: '七濑同学，上课前请把吉他拨片收起来。',
-        audio: '/assets/voice/cl-04.mp3',
+        audio: assetPath('/assets/voice/cl-04.mp3'),
       },
       {
         id: 'cl-05',
@@ -186,7 +187,7 @@ export const scenes: Record<string, Scene> = {
         mood: 'teasing',
         position: 'left',
         text: '书记大人连别人的心跳都要登记吗？',
-        audio: '/assets/voice/cl-05.mp3',
+        audio: assetPath('/assets/voice/cl-05.mp3'),
       },
     ],
     choices: [
@@ -215,8 +216,8 @@ export const scenes: Record<string, Scene> = {
     name: '放学后的音乐教室',
     time: '周一 16:42',
     subtitle: '未完成的歌在夕阳里断了一拍。',
-    background: '/assets/backgrounds/music-room-sunset.png',
-    bgm: '/assets/bgm/unfinished-love-song.mp3',
+    background: assetPath('/assets/backgrounds/music-room-sunset.png'),
+    bgm: assetPath('/assets/bgm/unfinished-love-song.mp3'),
     bgmName: '未完成的告白曲',
     goal: '听完澪的歌，确认匿名信不是普通情书。',
     cast: ['mio', 'rinka'],
@@ -228,14 +229,14 @@ export const scenes: Record<string, Scene> = {
         mood: 'soft',
         position: 'center',
         text: '偷听要收费哦。新同学的话，第一分钟免费。',
-        audio: '/assets/voice/mr-01.mp3',
+        audio: assetPath('/assets/voice/mr-01.mp3'),
       },
       {
         id: 'mr-02',
         speaker: '青井悠斗',
         characterId: 'yuto',
         text: '这首曲子叫什么？',
-        audio: '/assets/voice/mr-02.mp3',
+        audio: assetPath('/assets/voice/mr-02.mp3'),
       },
       {
         id: 'mr-03',
@@ -244,7 +245,7 @@ export const scenes: Record<string, Scene> = {
         mood: 'sad-smile',
         position: 'center',
         text: '还没有名字。因为写它的人还没想起来。',
-        audio: '/assets/voice/mr-03.mp3',
+        audio: assetPath('/assets/voice/mr-03.mp3'),
       },
       {
         id: 'mr-04',
@@ -253,15 +254,15 @@ export const scenes: Record<string, Scene> = {
         mood: 'sharp',
         position: 'right',
         text: '别被她的歌骗了。第一封信不是告白，是求救。',
-        audio: '/assets/voice/mr-04.mp3',
+        audio: assetPath('/assets/voice/mr-04.mp3'),
       },
     ],
     videoEventAfterDialogue: {
       id: 'mio-first-song',
       title: '未完成的告白曲',
       text: '夕阳掠过琴键，澪回头时，未写完的旋律像一封迟到的信。',
-      src: '/assets/video/mio-first-song.mp4',
-      poster: '/assets/backgrounds/music-room-sunset.png',
+      src: assetPath('/assets/video/mio-first-song.mp4'),
+      poster: assetPath('/assets/backgrounds/music-room-sunset.png'),
       messageAfter: '最后一个音落下时，黑板上出现一句话：不要相信第一封信。',
     },
     choices: [
@@ -290,8 +291,8 @@ export const scenes: Record<string, Scene> = {
     name: '夜晚的空教室',
     time: '周一 19:06',
     subtitle: '窗玻璃上映出四个人影。',
-    background: '/assets/backgrounds/empty-classroom-night.png',
-    bgm: '/assets/bgm/seventh-letter.mp3',
+    background: assetPath('/assets/backgrounds/empty-classroom-night.png'),
+    bgm: assetPath('/assets/bgm/seventh-letter.mp3'),
     bgmName: '第七封信',
     goal: '选择第二章路线。今晚之后，会有一个人忘记你。',
     cast: ['haruka', 'mio', 'rinka'],
@@ -301,7 +302,7 @@ export const scenes: Record<string, Scene> = {
         speaker: '旁白',
         characterId: 'narrator',
         text: '教室的灯忽然熄灭。窗玻璃上映出四个人影。',
-        audio: '/assets/voice/nc-01.mp3',
+        audio: assetPath('/assets/voice/nc-01.mp3'),
       },
       {
         id: 'nc-02',
@@ -310,7 +311,7 @@ export const scenes: Record<string, Scene> = {
         mood: 'urgent',
         position: 'left',
         text: '第一封信不是我写的。但我知道第二封在哪里。',
-        audio: '/assets/voice/nc-02.mp3',
+        audio: assetPath('/assets/voice/nc-02.mp3'),
       },
       {
         id: 'nc-03',
@@ -319,7 +320,7 @@ export const scenes: Record<string, Scene> = {
         mood: 'fragile',
         position: 'center',
         text: '悠斗，别露出那种表情。我会想起不该想起的事。',
-        audio: '/assets/voice/nc-03.mp3',
+        audio: assetPath('/assets/voice/nc-03.mp3'),
       },
       {
         id: 'nc-04',
@@ -328,22 +329,22 @@ export const scenes: Record<string, Scene> = {
         mood: 'direct',
         position: 'right',
         text: '选择吧。今晚之后，我们三个人里会有一个人忘记你。',
-        audio: '/assets/voice/nc-04.mp3',
+        audio: assetPath('/assets/voice/nc-04.mp3'),
       },
       {
         id: 'nc-05',
         speaker: '青井悠斗',
         characterId: 'yuto',
         text: '如果这是恋爱游戏，为什么每个选项都像告别？',
-        audio: '/assets/voice/nc-05.mp3',
+        audio: assetPath('/assets/voice/nc-05.mp3'),
       },
     ],
     videoEventAfterDialogue: {
       id: 'seventh-letter-classroom',
       title: '第七封信',
       text: '夜色压住教室，粉笔灰浮起，三个人的影子同时映在窗上。',
-      src: '/assets/video/seventh-letter-classroom.mp4',
-      poster: '/assets/backgrounds/empty-classroom-night.png',
+      src: assetPath('/assets/video/seventh-letter-classroom.mp4'),
+      poster: assetPath('/assets/backgrounds/empty-classroom-night.png'),
       messageAfter: '今晚之后，你选择的人会记住你；另一个人会把你忘掉。',
     },
     choices: [
@@ -384,14 +385,14 @@ export const endingDialogue = [
     speaker: '旁白',
     characterId: 'narrator',
     text: '黑板上，粉笔自己写下最后一行字：第七封信，明天寄出。',
-    audio: '/assets/voice/ed-01.mp3',
+    audio: assetPath('/assets/voice/ed-01.mp3'),
   },
   {
     id: 'ed-02',
     speaker: '青井悠斗',
     characterId: 'yuto',
     text: '我不知道自己选的是谁。只知道从这一刻开始，日常再也回不去了。',
-    audio: '/assets/voice/ed-02.mp3',
+    audio: assetPath('/assets/voice/ed-02.mp3'),
   },
 ] satisfies Scene['dialogue']
 
